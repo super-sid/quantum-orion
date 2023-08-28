@@ -1,0 +1,7 @@
+// images/taylor-swift.jpg
+
+// Taylor Swift's picture
+
+face {
+  image: url('taylor-swift.jpg')
+}

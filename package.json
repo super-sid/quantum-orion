@@ -1,0 +1,114 @@
+{
+  "name": "Taylor Swift Website",
+  "version": "1.0.0",
+  "description": "A React JS website for Taylor Swift",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-dom server",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "MIT"
+}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './containers/Home';
+import Music from './containers/Music';
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/music" component={Music} />
+      </Switch>
+    </BrowserRouter>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+import React from 'react';
+
+const Button = ({ text, onClick }) => {
+  return (
+    <button onClick={onClick}>{text}</button>
+  );
+};
+
+export default Button;
+import React from 'react';
+
+const SongList = ({ songs }) => {
+  return (
+    <ul>
+      {songs.map(song => (
+        <li key={song.id}>{song.title}</li>
+      ))}
+    </ul>
+  );
+};
+
+export default SongList;
+import React from 'react';
+
+const TourDate = ({ date }) => {
+  return (
+    <p>{date}</p>
+  );
+};
+
+export default TourDate;
+import React from 'react';
+import SongList from './components/SongList';
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Taylor Swift Website</h1>
+      <SongList songs={[
+        { id: 1, title: 'Shake It Off' },
+        { id: 2, title: 'Blank Space' },
+        { id: 3, title: 'Bad Blood' },
+      ]} />
+    </div>
+  );
+};
+
+export default Home;
+import React from 'react';
+import TourDate from './components/TourDate';
+
+const Music = () => {
+  return (
+    <div>
+      <h1>Taylor Swift Music</h1>
+      <TourDate date="2022-03-05" />
+    </div>
+  );
+};
+
+export default Music;

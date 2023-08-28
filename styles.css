@@ -1,0 +1,58 @@
+/* Global Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 10px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.song-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.song-list li {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.song-list li:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.tour-date {
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.tour-date h2 {
+  font-size: 18px;
+}
+
+.tour-date p {
+  font-size: 16px;
+}
